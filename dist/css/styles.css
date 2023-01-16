@@ -12,9 +12,13 @@
   --color-desat-blue: hsl(235, 45%, 61%);
   --color-pale-blue: hsl(236, 100%, 87%);
 
+  --color-white: white;
+
   --fw-1: 300;
   --fw-2: 400;
   --fw-3: 500;
+
+  --br-1: 1rem;
 }
 
 *,
@@ -27,4 +31,85 @@
 
 html {
   font-family: "Rubik", sans-serif;
+}
+
+body {
+  background-color: var(--color-dark-blue-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.dashboard {
+  max-width: 80rem;
+  width: 100%;
+  grid-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.profile {
+  grid-row: span 2;
+}
+
+.profile > * {
+  padding: 2rem;
+}
+
+.profile__head {
+  background-color: var(--color-blue);
+  display: grid;
+  justify-self: start;
+  border-radius: var(--br-1);
+  z-index: 1;
+  position: relative;
+}
+
+.profile__head > span {
+  color: var(--color-pale-blue);
+  margin-bottom: 0.5rem;
+}
+
+.profile__img {
+  width: 5rem;
+  border: 3px solid var(--color-white);
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.profile__name {
+  color: var(--color-white);
+  font-weight: var(--fw-1);
+  font-size: 2.5rem;
+}
+
+.profile__list {
+  border-radius: var(--br-1);
+  background-color: var(--color-dark-blue-1);
+  list-style-type: none;
+  position: relative;
+  top: -1.5rem;
+  padding-top: 4rem;
+}
+
+.profile__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.profile__btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--color-desat-blue);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.profile__btn:hover {
+  color: var(--color-pale-blue);
+}
+
+.profile__btn--active {
+  color: var(--color-pale-blue);
 }
