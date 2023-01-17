@@ -48,6 +48,7 @@ body {
   grid-row-gap: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin: 5rem 0;
 }
 
 .profile {
@@ -239,4 +240,51 @@ body {
 
 .stat--care .stat__head::after {
   background-image: url("../images/icon-self-care.svg");
+}
+
+/* 568px */
+@media (max-width: 35.5em) {
+  .profile__list {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+  }
+
+  .profile__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .stat__time {
+    font-size: 2rem;
+  }
+
+  .profile > * {
+    border-radius: var(--br-1);
+  }
+
+  .profile__head {
+    grid-template-columns: min-content 1fr;
+    justify-content: center;
+    grid-column-gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .profile__head > span,
+  .profile__name {
+    grid-column: 2/3;
+  }
+
+  .profile__head > span {
+    align-self: end;
+  }
+
+  .profile__img {
+    grid-row: span 2;
+    margin-bottom: 0;
+  }
+
+  .profile__name {
+    color: var(--color-white);
+    font-weight: var(--fw-1);
+    font-size: 1.5rem;
+  }
 }
