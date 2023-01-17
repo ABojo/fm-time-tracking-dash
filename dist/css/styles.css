@@ -42,26 +42,31 @@ body {
 }
 
 .dashboard {
-  max-width: 80rem;
-  width: 100%;
+  max-width: 70rem;
+  width: 90%;
   grid-gap: 2rem;
+  grid-row-gap: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
 .profile {
   grid-row: span 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile > * {
   padding: 2rem;
+  border-radius: var(--br-1);
 }
 
 .profile__head {
   background-color: var(--color-blue);
   display: grid;
+  grid-auto-rows: min-content;
+  flex: 1;
   justify-self: start;
-  border-radius: var(--br-1);
   z-index: 1;
   position: relative;
 }
@@ -75,7 +80,7 @@ body {
   width: 5rem;
   border: 3px solid var(--color-white);
   border-radius: 50%;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .profile__name {
@@ -85,16 +90,15 @@ body {
 }
 
 .profile__list {
-  border-radius: var(--br-1);
   background-color: var(--color-dark-blue-1);
   list-style-type: none;
   position: relative;
-  top: -1.5rem;
-  padding-top: 4rem;
+  top: -2rem;
+  padding-top: 3.5rem;
 }
 
 .profile__item:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .profile__btn {
@@ -104,6 +108,8 @@ body {
   color: var(--color-desat-blue);
   cursor: pointer;
   transition: all 0.2s;
+  font-family: inherit;
+  font-weight: var(--fw-2);
 }
 
 .profile__btn:hover {
@@ -112,4 +118,125 @@ body {
 
 .profile__btn--active {
   color: var(--color-pale-blue);
+}
+
+.stat {
+  overflow: hidden;
+  position: relative;
+}
+
+.stat > * {
+  padding: 2rem;
+  border-radius: var(--br-1);
+}
+
+.stat__head::after {
+  display: block;
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  top: -1.5rem;
+  left: 8rem;
+}
+
+.stat__head {
+  padding: 1rem;
+  height: 5rem;
+  width: 100%;
+  z-index: -1;
+}
+
+.stat__body {
+  background-color: var(--color-dark-blue-1);
+  color: var(--color-white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: end;
+  position: relative;
+  top: -2rem;
+}
+
+.stat__heading {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  font-weight: var(--fw-3);
+}
+
+.stat__time {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: var(--fw-1);
+}
+
+.stat__controls {
+  background-color: transparent;
+  border: none;
+  background-image: url("../images/icon-ellipsis.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1.5rem;
+  height: 0.5rem;
+  padding: 0;
+  display: inline;
+  justify-self: end;
+  align-self: start;
+  font-size: 0;
+}
+
+.stat__previous {
+  grid-column: 1 / -1;
+  color: var(--color-pale-blue);
+}
+
+.stat--work .stat__head {
+  background-color: var(--color-work);
+}
+
+.stat--work .stat__head::after {
+  background-image: url("../images/icon-work.svg");
+}
+
+.stat--play .stat__head {
+  background-color: var(--color-play);
+}
+
+.stat--play .stat__head::after {
+  background-image: url("../images/icon-play.svg");
+}
+
+.stat--study .stat__head {
+  background-color: var(--color-study);
+}
+
+.stat--study .stat__head::after {
+  background-image: url("../images/icon-study.svg");
+}
+
+.stat--exercise .stat__head {
+  background-color: var(--color-excercise);
+}
+
+.stat--exercise .stat__head::after {
+  background-image: url("../images/icon-exercise.svg");
+}
+
+.stat--social .stat__head {
+  background-color: var(--color-social);
+}
+
+.stat--social .stat__head::after {
+  background-image: url("../images/icon-social.svg");
+}
+
+.stat--care .stat__head {
+  background-color: var(--color-care);
+}
+
+.stat--care .stat__head::after {
+  background-image: url("../images/icon-self-care.svg");
 }
