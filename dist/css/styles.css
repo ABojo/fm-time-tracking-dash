@@ -139,16 +139,16 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  position: relative;
-  top: -1.5rem;
-  left: 8rem;
+  position: absolute;
+  top: -0.8rem;
+  right: 1.5rem;
 }
 
 .stat__head {
   padding: 1rem;
   height: 5rem;
   width: 100%;
-  z-index: -1;
+  position: relative;
 }
 
 .stat__body {
@@ -176,10 +176,6 @@ body {
 .stat__controls {
   background-color: transparent;
   border: none;
-  background-image: url("../images/icon-ellipsis.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   width: 1.5rem;
   height: 0.5rem;
   padding: 0;
@@ -187,6 +183,21 @@ body {
   justify-self: end;
   align-self: start;
   font-size: 0;
+  mask-image: url("../images/icon-ellipsis.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  -webkit-mask-image: url("../images/icon-ellipsis.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  background-color: var(--color-pale-blue);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.stat__controls:hover {
+  background-color: var(--color-desat-blue);
 }
 
 .stat__previous {
